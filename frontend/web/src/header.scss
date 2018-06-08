@@ -1,0 +1,30 @@
+@import "app";
+
+.header {
+  background-color: $secondary-bg;
+  color:$primary-color;
+  padding:10px;
+}
+
+.kaizen-text {
+  color:$primary-color;
+}
+.gard-text {
+  color:$secondary-color;
+}
+
+img.logo {
+  height:24px;
+  vertical-align: middle;
+  padding-right:10px;
+}
+
+.auth-link {
+  font-weight:400;
+}
+
+.or {
+  display:inline-block;
+  margin-left:6px;
+  margin-right:6px;
+}

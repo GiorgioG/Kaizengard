@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400");
+
+$primary-color: #C5C3C6;
+$secondary-color: #DCDCDD;
+$secondary-bg: #232A30;
+$primary-bg: #46494C;
+$tertiary-bg: #1985A1;
+
+html, body
+{
+  margin:0;
+  padding:0;
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+  background-color:$primary-bg;
+}
+
+a, a:visited {
+  color:$primary-color;
+  text-decoration: none;
+}
+a:hover {
+  color:$secondary-color;
+}
