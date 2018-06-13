@@ -1,5 +1,5 @@
 @import "../theme";
-$card-size:320px;
+$card-size:380px;
 
 .code-card-container {
   min-width: $card-size;
@@ -10,8 +10,14 @@ $card-size:320px;
 
 }
 
+.title-wrapper {
+  padding-top:3px;
+  padding-bottom:4px;
+  font-weight:bold;
+}
+
 .code-card-container > .wrapper{
-  height:90%;
+  height:80%;
   background-color: darken($primary-bg, 15%);
   padding: 10px;
 
@@ -21,11 +27,11 @@ $card-size:320px;
   cursor:pointer;
 
 }
-.code-card-container > .wrapper:hover{
+.code-card-container:hover > .wrapper{
   border-color: #ae63e4;
 }
 
-.code-card-container > .wrapper:hover > .title{
+.code-card-container:hover > .title-wrapper > .title{
   color:#ae63e4;
 }
 

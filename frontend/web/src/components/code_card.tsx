@@ -9,27 +9,28 @@ require('codemirror/mode/javascript/javascript');
 export const CodeCardComponent = () => {
     return (
         <div className="col code-card-container">
+            <div className="title-wrapper"><a className="title">This is my title</a></div>
             <div className="wrapper">
-            <a className="title">This is my title</a>
+
                 <CodeMirror className="Bob"
                     value='static void Main(string[] args)
-        {
-         // well shit
-            int i, count, f1 = 0, f2 = 1, f3 = 0;
-            Console.Write("Enter the Limit : ");
-            count = int.Parse(Console.ReadLine());
-            Console.WriteLine(f1);
-            Console.WriteLine(f2);
-            for (i = 0; i <= count; i++)
-            {
-                f3 = f1 + f2;
-                Console.WriteLine(f3);
-                f1 = f2;
-                f2 = f3;
-            }
-            Console.ReadLine();
+{
+ // well shit
+    int i, count, f1 = 0, f2 = 1, f3 = 0;
+    Console.Write("Enter the Limit : ");
+    count = int.Parse(Console.ReadLine());
+    Console.WriteLine(f1);
+    Console.WriteLine(f2);
+    for (i = 0; i <= count; i++)
+    {
+        f3 = f1 + f2;
+        Console.WriteLine(f3);
+        f1 = f2;
+        f2 = f3;
+    }
+    Console.ReadLine();
 
-        }'
+}'
                     options={{
                         mode: 'clike',
                         theme: 'black-pearl',scrollbarStyle:null, readOnly:true,
@@ -37,7 +38,7 @@ export const CodeCardComponent = () => {
                     onChange={(editor, data, value) => {
                     }}
                     editorDidMount={editor => {
-                        editor.setSize(288,240);
+                        editor.setSize(350,275);
                     }}
                 />
             </div>
