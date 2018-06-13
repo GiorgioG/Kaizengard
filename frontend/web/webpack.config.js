@@ -6,7 +6,6 @@ const {CheckerPlugin} = require('awesome-typescript-loader');
 const devMode = process.env.NODE_ENV !== 'production'
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -52,7 +51,6 @@ module.exports = {
 
         rules: [{
             test: /\.(sa|sc|c)ss$/,
-            exclude: /node_modules/,
             use: [
                 MiniCssExtractPlugin.loader,
                 "css-loader", // translates CSS into CommonJS

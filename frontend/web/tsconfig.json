@@ -4,9 +4,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "sourceMap": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "module": "commonjs",
-        "target": "es5",
         "jsx": "react"
   }
 }

@@ -2,8 +2,9 @@
 
 $primary-color: #C5C3C6;
 $secondary-color: #DCDCDD;
-$secondary-bg: #232A30;
-$primary-bg: #46494C;
+$primary-bg: darken(#46494C, 10%);
+
+$secondary-bg: darken(#46494C, 15%);
 $tertiary-bg: #1985A1;
 
 html, body

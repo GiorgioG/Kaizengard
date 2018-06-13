@@ -1,0 +1,38 @@
+
+.flex-grid .col {
+  flex: 1;
+  margin-top:20px;
+  margin-left:20px;
+}
+.flex-grid {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: left;
+  flex-flow:  wrap;
+
+}
+
+@media (max-width: 400px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+}
+.flex-grid {
+  margin: 0 0 0 0;
+}
+.col {
+  padding: 5px;
+}
