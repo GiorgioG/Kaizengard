@@ -6,6 +6,7 @@ const {CheckerPlugin} = require('awesome-typescript-loader');
 const devMode = process.env.NODE_ENV !== 'production'
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+console.log("DevMode? "+ devMode);
 
 
 module.exports = {
@@ -13,19 +14,6 @@ module.exports = {
     entry: './src/app.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
-    },
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        },
-        minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true // set to true if you want JS source maps
-            }),
-            new OptimizeCSSAssetsPlugin({})
-        ]
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -52,7 +40,7 @@ module.exports = {
         rules: [{
             test: /\.(sa|sc|c)ss$/,
             use: [
-                MiniCssExtractPlugin.loader,
+                devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                 "css-loader", // translates CSS into CommonJS
                 "sass-loader" // compiles Sass to CSS
             ],
@@ -79,3 +67,19 @@ module.exports = {
         ]
     }
 };
+
+if(!devMode) {
+    module.exports.optimization = {
+        splitChunks: {
+            chunks: 'all'
+        },
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true // set to true if you want JS source maps
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ]
+    };
+}

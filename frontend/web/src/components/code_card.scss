@@ -1,32 +1,39 @@
 @import "../theme";
-$card-size:380px;
+$card-width:480px;
+$card-height:$card-width*0.75;
 
 .code-card-container {
-  min-width: $card-size;
-  max-width: $card-size;
-  min-height: $card-size;
+  min-width: $card-width;
+  max-width: $card-width;
+  min-height: $card-height;
+  max-height: $card-height;
   border: solid 1px darken($primary-bg, 15%);
   background-color: darken($primary-bg, 7%);
 
 }
 
 .title-wrapper {
-  padding-top:3px;
   padding-bottom:4px;
-  font-weight:bold;
+  padding-left:5px;
 }
 
-.code-card-container > .wrapper{
-  height:80%;
+.code-card-container > .wrapper {
+  height: 83%;
   background-color: darken($primary-bg, 15%);
   padding: 10px;
+  padding-top: 0px;
+  padding-left: 5px;
 
   border-color: darken($primary-bg, 10%);
   border-bottom-width: 5px;
   border-bottom-style: solid;
-  cursor:pointer;
-
+  cursor: pointer;
 }
+
+.code-card-container:hover {
+  border-color: #250a38;
+}
+
 .code-card-container:hover > .wrapper{
   border-color: #ae63e4;
 }
@@ -35,7 +42,24 @@ $card-size:380px;
   color:#ae63e4;
 }
 
-.Bob {
+
+img.code-card-avatar {
+  height:28px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.code-card-footer {
+  padding-top:5px;
+
+}
+.code-card-footer > span.username{
+  font-size: 80%;
+  color: $primary-color;
+}
+
+.CodeMirror {
+  background-color: darken($primary-bg, 15%);
   pointer-events: none;
 
 }

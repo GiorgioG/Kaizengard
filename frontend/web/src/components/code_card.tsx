@@ -7,9 +7,19 @@ import {UnControlled as CodeMirror} from 'react-codemirror2'
 require('codemirror/mode/clike/clike');
 require('codemirror/mode/javascript/javascript');
 export const CodeCardComponent = () => {
+    function setEditorSize(editor) {
+        let wrapperEl = editor.getWrapperElement().parentElement.parentElement;
+        let cs = window.getComputedStyle(wrapperEl);
+        let horizontalPadding = (parseInt(cs.paddingLeft) || 0) + (parseInt(cs.paddingRight) || 0);
+        let verticalPadding = (parseInt(cs.paddingTop) || 0) + (parseInt(cs.paddingBottom) || 0);
+        let width = wrapperEl.offsetWidth - horizontalPadding;
+        let height = wrapperEl.offsetHeight - verticalPadding;
+        editor.setSize(width, height);
+    }
+
     return (
         <div className="col code-card-container">
-            <div className="title-wrapper"><a className="title">This is my title</a></div>
+            <div className="title-wrapper"><a className="title">Why is this so slow?</a></div>
             <div className="wrapper">
 
                 <CodeMirror className="Bob"
@@ -33,14 +43,20 @@ export const CodeCardComponent = () => {
 }'
                     options={{
                         mode: 'clike',
-                        theme: 'black-pearl',scrollbarStyle:null, readOnly:true,
+                        theme: 'black-pearl',scrollbarStyle:null, readOnly:'nocursor',
                     }}
-                    onChange={(editor, data, value) => {
-                    }}
+                   onSelection={(editor, data) => {
+                           debugger;
+
+                           console.log('here')
+                   }}
                     editorDidMount={editor => {
-                        editor.setSize(350,275);
+                        setEditorSize(editor);
                     }}
                 />
+            </div>
+            <div className="code-card-footer">
+                <img src="https://en.gravatar.com/userimage/10872392/ce64998eb216e14b84214f97887fbc81.png" className="code-card-avatar"/> <span className="username">GiorgioG</span>
             </div>
         </div>
     );
